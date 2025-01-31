@@ -40,6 +40,7 @@ public class BasicConfig {
                                 new AntPathRequestMatcher("/api-json/**"),
                                 new AntPathRequestMatcher("/swagger-ui/**"),
                                 new AntPathRequestMatcher("/status"),
+                                new AntPathRequestMatcher("/repair-bay"),
                                 new AntPathRequestMatcher("/teapot")).permitAll())
                 .httpBasic(withDefaults())
                 .csrf().disable()
