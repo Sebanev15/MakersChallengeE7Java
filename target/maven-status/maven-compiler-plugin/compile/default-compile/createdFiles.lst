@@ -1,0 +1,8 @@
+com/meli/tetera/model/System.class
+com/meli/tetera/controller/RestShipController.class
+com/meli/tetera/config/OpenApiConfig.class
+com/meli/tetera/TeteraApplication.class
+com/meli/tetera/exception/ExceptionHandler.class
+com/meli/tetera/exception/NoContentException.class
+com/meli/tetera/controller/ApiController.class
+com/meli/tetera/exception/SystemNotFoundException.class

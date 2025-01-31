@@ -1,0 +1,8 @@
+/Users/seneves/MakersChallengeE7Java/src/main/java/com/meli/tetera/TeteraApplication.java
+/Users/seneves/MakersChallengeE7Java/src/main/java/com/meli/tetera/config/OpenApiConfig.java
+/Users/seneves/MakersChallengeE7Java/src/main/java/com/meli/tetera/controller/ApiController.java
+/Users/seneves/MakersChallengeE7Java/src/main/java/com/meli/tetera/controller/RestShipController.java
+/Users/seneves/MakersChallengeE7Java/src/main/java/com/meli/tetera/exception/ExceptionHandler.java
+/Users/seneves/MakersChallengeE7Java/src/main/java/com/meli/tetera/exception/NoContentException.java
+/Users/seneves/MakersChallengeE7Java/src/main/java/com/meli/tetera/exception/SystemNotFoundException.java
+/Users/seneves/MakersChallengeE7Java/src/main/java/model/System.java

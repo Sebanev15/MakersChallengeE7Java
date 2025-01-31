@@ -4,6 +4,9 @@ public class System {
     private String name;
     private String code;
 
+    public System() {
+    }
+
     public System(String name, String code) {
         this.name = name;
         this.code = code;

@@ -12,6 +12,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
+@SecurityScheme(
+        name = "basicAuth"
+        ,type = SecuritySchemeType.HTTP
+        ,scheme = "basic"
+        ,in = SecuritySchemeIn.HEADER
+)
 
 @Configuration
 public class OpenApiConfig {
