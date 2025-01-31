@@ -1,5 +1,6 @@
 package com.meli.tetera.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,11 +16,12 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 public class BasicConfig {
-
+    @Value("${meli.password}")
+    private String password;
     @Bean
     public InMemoryUserDetailsManager inMemoryUserDetailsManager(PasswordEncoder encoder){
         UserDetails user = User.withUsername("seba")
-                .password(encoder.encode("123"))
+                .password(encoder.encode(password))
                 .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(user);
@@ -32,7 +34,7 @@ public class BasicConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests(request -> request
-                        .requestMatchers(new AntPathRequestMatcher("/change-status")).authenticated()
+                        .requestMatchers("/change-status").authenticated()
                         .requestMatchers(new AntPathRequestMatcher("/v3/api-docs"),
                                 new AntPathRequestMatcher("/swagger"),
                                 new AntPathRequestMatcher("/api-json/**"),

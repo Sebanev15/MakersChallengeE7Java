@@ -10,22 +10,21 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Map;
 
-@org.springframework.web.bind.annotation.RestController
+@RestController
 @CrossOrigin(origins = "https://makers-challenge.altscore.ai/v1/s1/e7/")
 @Tag(name = "SHIP", description = "All ship methods")
 public class RestShipController {
 
-    private final ShipService shipService;
+    @Autowired
+    private ShipService shipService;
 
-    public RestShipController(ShipService shipService) {
-        this.shipService = shipService;
-    }
 
     @GetMapping("/status")
     @ResponseBody
@@ -38,7 +37,6 @@ public class RestShipController {
     }
 
     @PostMapping("/change-status")
-    @ResponseBody
     @SecurityRequirement(name = "basicAuth")
     @Operation(summary = "Update the status of the ship", description = "In this method you can update the status of the ship")
     @Tag(name = "POST", description = "All post methods")
